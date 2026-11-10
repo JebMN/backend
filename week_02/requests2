@@ -13,8 +13,8 @@ Content-Type: application/json
 
 {
   "title": "Arrival",
-  "Director": "Denis Villeneuve",
-  "year": 2016
+  "year": 2016,
+  "genre": "Sci-Fi"
 }
 
 ### Create an invalid movie
@@ -32,9 +32,8 @@ Content-Type: application/json
 
 {
   "title": "The Matrix",
-  "Director": "Lana Wachowski",
   "year": 1999,
-
+  "genre": "Sci-Fi"
 }
 
 ### Invalid incomplete PUT
@@ -54,7 +53,7 @@ Content-Type: application/json
 }
 
 ### Filter and sort movies
-GET http://localhost:3000/movies?director=AkuLouhimies&minYear=2000&sort=year
+GET http://localhost:3000/movies?genre=Sci-Fi&minYear=2000&sort=year
 
 ### Invalid query parameter
 GET http://localhost:3000/movies?minYear=invalid
