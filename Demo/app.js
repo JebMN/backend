@@ -12,6 +12,14 @@ let movies = [
         title: "Trainspotting",
         director: "IDK",
         year: "Summin"
+
+    },
+
+    {
+        id:2,
+        title: "Trainspotting2",
+        director: "Micheal D Haggins",
+        year: "Summin"
     }
 ];
 
@@ -39,7 +47,7 @@ app.post("/movies", (req,res) => {
    
     if(!title || !director || !year) {
         return res.status(400).json({
-            error : "title, director and year are required"
+            error: "title, director and year are required"
         });
     }
     const newMovie = {
@@ -55,3 +63,4 @@ app.post("/movies", (req,res) => {
 app.listen(PORT,  ()=> {
  console.log("Server listening at port 3001")   
 });
+
