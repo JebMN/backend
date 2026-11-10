@@ -7,17 +7,9 @@
 GET http://localhost:3000/movies/
 
 ###
-GET http://localhost:3000/movies/69
+GET http://localhost:3000/movies/1
 
-###
-POST http://localhost:3000/movies/
-Content-Type: application/json
 
-{
-    "title": "Lapin sota",
-   "director": "Aku Louhimies",
-   "year": 2026
-} 
 
 ###
 PUT http://localhost:3000/movies/1
@@ -38,51 +30,78 @@ Content-Type: application/json
     "title": "Lapin sota"
 }
 
-###Test the validateMovies func and get unknown movie ID
 
 ###partial POST
-POST = http://localhost:3000/movies/
+POST http://localhost:3000/movies/
 Content-Type: application/json
 
 {
-    "title": "The Guard",
-       "director": ,
-    "year": 2011
-}
+    "title": "Lapin sota",
+   "year": 2026
+
+} 
 
 ###partial PUT
-PUT = http://localhost:3000/movies/5
+PUT http://localhost:3000/movies/1
 Content-Type: application/json
 
 {
+
     "title": "The Guard",
     "year": 2011
+
 }
 
 ###Unknown movie ID 
 ###
-GET http://localhost:3000/movies/4000
+GET http://localhost:3001/movie?Year=2010
 
+#### 
 
+###Testing movies filter and sorting
+###
 
+GET http://localhost:3000/movies?sort=year
+###
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+GET http://localhost:3000/movies?sort=title
+###
+GET http://localhost:3000/movies?minYear=2000&sort=title
 ###Delete items
 DELETE http://localhost:3000/movies/1
 ###
 GET http://localhost:3000/movies/
+
+
+###Logger testing
+GET http://localhost:3000/movies/
+###
+GET http://localhost:3000/movies/69
+###
+POST http://localhost:3000/movies/
+Content-Type: application/json
+
+{
+    "title": "Lapin sota",
+    "director": "Aku Louhimies",
+    "year": 2026
+
+} 
+###
+PATCH http://localhost:3000/movies/4
+Content-Type: application/json
+
+{
+    "title": "Tuntematon sotilas",
+    "year": 2017
+
+} 
+###
+GET http://localhost:3000/crash
+
+###Route +error handling tester 
+GET http://localhost:3000/non_existent
+
+###
+GET http://localhost:3000/crash
+
