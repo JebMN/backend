@@ -1,0 +1,88 @@
+#This is for testing CRUD APIs from the server
+#Requires rest client extension of CS code 
+
+#get all moves
+
+###
+GET http://localhost:3000/movies/
+
+###
+GET http://localhost:3000/movies/69
+
+###
+POST http://localhost:3000/movies/
+Content-Type: application/json
+
+{
+    "title": "Lapin sota",
+   "director": "Aku Louhimies",
+   "year": 2026
+} 
+
+###
+PUT http://localhost:3000/movies/1
+
+
+###
+GET http://localhost:3000/movies/
+
+###Delete items
+DELETE http://localhost:3000/movies/1
+
+###
+PATCH http://localhost:3000/movies/4
+Content-Type: application/json
+
+{
+    
+    "title": "Lapin sota"
+}
+
+###Test the validateMovies func and get unknown movie ID
+
+###partial POST
+POST = http://localhost:3000/movies/
+Content-Type: application/json
+
+{
+    "title": "The Guard",
+       "director": ,
+    "year": 2011
+}
+
+###partial PUT
+PUT = http://localhost:3000/movies/5
+Content-Type: application/json
+
+{
+    "title": "The Guard",
+    "year": 2011
+}
+
+###Unknown movie ID 
+###
+GET http://localhost:3000/movies/4000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###Delete items
+DELETE http://localhost:3000/movies/1
+###
+GET http://localhost:3000/movies/
